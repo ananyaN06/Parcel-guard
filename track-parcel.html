@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Parcel | Smart Parcel Protection</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="track-page">
+
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon">⬡</div>
+            <span>Parcel<span class="blue">Guard</span></span>
+        </div>
+        <a href="index.html" class="nav-login">← Back to Home</a>
+    </header>
+
+    <main class="track-container">
+
+        <section class="track-heading">
+            <span class="section-tag">LIVE PARCEL MONITORING</span>
+            <h1>Track Your <span>Parcel</span></h1>
+            <p>Follow your parcel journey with secure tracking.</p>
+        </section>
+
+        <section class="track-search-card">
+            <div class="track-search-icon">⌕</div>
+            <div class="track-search-content">
+                <h2>Enter Tracking ID</h2>
+                <p>Use the Tracking ID provided during parcel registration.</p>
+
+                <form id="trackForm" class="track-form">
+                    <input
+                        type="text"
+                        id="trackingInput"
+                        placeholder="Example: PG12345678"
+                        required
+                    >
+                    <button type="submit">Track Parcel →</button>
+                </form>
+                <p id="trackMessage" class="track-message"></p>
+            </div>
+        </section>
+
+        <section id="trackingResult" class="tracking-result" hidden>
+
+            <div class="tracking-top">
+                <div>
+                    <span class="section-tag">PARCEL OVERVIEW</span>
+                    <h2>Parcel Details</h2>
+                </div>
+                <span class="status-pill">Registered</span>
+            </div>
+
+            <div class="tracking-info-grid">
+
+                <div>
+                    <span>TRACKING ID</span>
+                    <strong id="displayTrackingId">-</strong>
+                </div>
+
+                <div>
+                    <span>SENDER NAME</span>
+                    <strong id="displaySender">-</strong>
+                </div>
+
+                <div>
+                    <span>RECEIVER NAME</span>
+                    <strong id="displayReceiver">-</strong>
+                </div>
+
+                <div>
+                    <span>PARCEL SIZE</span>
+                    <strong id="displaySize">-</strong>
+                </div>
+
+                <div>
+                    <span>PARCEL TYPE</span>
+                    <strong id="displayType">-</strong>
+                </div>
+
+                <div>
+                    <span>PARCEL STATUS</span>
+                    <strong>Registered</strong>
+                </div>
+
+            </div>
+
+            <div class="timeline-heading">
+                <h2>Tracking Journey</h2>
+                <p>Parcel movement and security updates</p>
+            </div>
+
+            <div class="tracking-timeline">
+
+                <div class="timeline-item completed">
+                    <div class="timeline-dot">✓</div>
+                    <div>
+                        <h3>Parcel Registered</h3>
+                        <p>Parcel details successfully submitted</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item completed">
+                    <div class="timeline-dot">✓</div>
+                    <div>
+                        <h3>Locker Allocated</h3>
+                        <p>A suitable locker has been assigned</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item active">
+                    <div class="timeline-dot">●</div>
+                    <div>
+                        <h3>Security Monitoring</h3>
+                        <p>Parcel security analysis is in progress</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">4</div>
+                    <div>
+                        <h3>Awaiting Collection</h3>
+                        <p>Receiver verification is pending</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="security-analysis.html" class="security-link">
+                View Security Analysis →
+            </a>
+
+        </section>
+
+    </main>
+
+    <script src="js/track.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Collection Result</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="collection-page">
+
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon">⬡</div>
+            <span>Parcel<span class="blue">Guard</span></span>
+        </div>
+        <a href="index.html" class="nav-login">← Home</a>
+    </header>
+
+    <main class="collection-container">
+
+        <section class="collection-card" id="collectionCard">
+
+            <div class="collection-check">✓</div>
+
+            <span class="section-tag">COLLECTION CONFIRMATION</span>
+
+            <h1>OTP Verified <span>Successfully!</span></h1>
+
+            <p class="collection-description">
+                Receiver identity verified. Please confirm the parcel
+                condition to complete the digital collection record.
+            </p>
+
+            <div class="collection-id">
+                <span>TRACKING ID</span>
+                <strong id="collectionTrackingId">-</strong>
+            </div>
+
+            <div class="collection-status-list">
+
+                <div class="collection-status-row">
+                    <span class="collection-status-icon">✓</span>
+                    <div>
+                        <strong>OTP Verification</strong>
+                        <p>Receiver successfully verified</p>
+                    </div>
+                    <span class="completed-label">Verified</span>
+                </div>
+
+                <div class="collection-status-row">
+                    <span class="collection-status-icon">2</span>
+                    <div>
+                        <strong>Parcel Collection</strong>
+                        <p>Waiting for receiver confirmation</p>
+                    </div>
+                    <span class="completed-label">Pending</span>
+                </div>
+
+                <div class="collection-status-row">
+                    <span class="collection-status-icon">3</span>
+                    <div>
+                        <strong>Locker Status</strong>
+                        <p>Release after collection confirmation</p>
+                    </div>
+                    <span class="completed-label">Pending</span>
+                </div>
+
+            </div>
+
+            <div class="proof-section">
+                <span class="section-tag">DIGITAL PROOF OF COLLECTION</span>
+                <h2>Confirm Parcel Condition</h2>
+
+                <p class="collection-description">
+                    Please check your parcel and select its condition.
+                </p>
+
+                <form id="collectionProofForm">
+
+                    <label for="proofReceiver">Receiver Name</label>
+                    <input
+                        type="text"
+                        id="proofReceiver"
+                        placeholder="Enter receiver name"
+                        required
+                    >
+
+                    <label for="parcelCondition">Parcel Condition</label>
+                    <select id="parcelCondition" required>
+                        <option value="">Select parcel condition</option>
+                        <option value="Good">Received in Good Condition</option>
+                        <option value="Damaged">Received in Damaged Condition</option>
+                    </select>
+
+                    <label for="proofRemarks">Additional Remarks (Optional)</label>
+                    <textarea
+                        id="proofRemarks"
+                        placeholder="Enter any remarks about the parcel..."
+                        rows="3"
+                    ></textarea>
+
+                    <button type="submit" class="collection-button">
+                        Confirm Collection →
+                    </button>
+
+                    <p id="proofMessage" class="collection-message"></p>
+
+                </form>
+            </div>
+
+            <!-- DIGITAL COLLECTION RECORD -->
+
+            <div id="proofRecord" hidden>
+
+                <h2>Digital Collection Record</h2>
+
+                <p>
+                    <strong>Tracking ID:</strong>
+                    <span id="recordTrackingId"></span>
+                </p>
+
+                <p>
+                    <strong>Receiver:</strong>
+                    <span id="recordReceiver"></span>
+                </p>
+
+                <p>
+                    <strong>Condition:</strong>
+                    <span id="recordCondition"></span>
+                </p>
+
+                <p>
+                    <strong>Remarks:</strong>
+                    <span id="recordRemarks"></span>
+                </p>
+
+                <p>
+                    <strong>Locker ID:</strong>
+                    <span id="recordLocker"></span>
+                </p>
+
+                <p>
+                    <strong>Collection Time:</strong>
+                    <span id="recordTime"></span>
+                </p>
+
+                <p class="collection-description">
+                    Your collection confirmation has been recorded in this demo.
+                </p>
+
+            </div>
+
+            <a href="index.html" class="collection-button">
+                Return to Homepage →
+            </a>
+
+            <p class="collection-note">
+                Demo confirmation. Actual collection records and locker
+                release will be updated through the backend.
+            </p>
+
+        </section>
+
+        <section class="collection-error" id="collectionError" hidden>
+            <h2>Verification Required</h2>
+            <p>Please complete OTP verification before viewing the collection result.</p>
+            <a href="otp-verification.html">Go to OTP Verification →</a>
+        </section>
+
+    </main>
+
+    <script src="js/collection.js"></script>
+    <script src="js/collection-proof.js"></script>
+
+</body>
+</html>

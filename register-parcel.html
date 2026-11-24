@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Parcel | ParcelGuard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="register-page">
+
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon">⬡</div>
+            <span>Parcel<span class="blue">Guard</span></span>
+        </div>
+        <a href="index.html" class="nav-login">← Back to Home</a>
+    </header>
+
+    <main class="register-container">
+
+        <section class="register-heading">
+            <span class="section-tag">PARCEL MANAGEMENT</span>
+            <h1>Register a <span>New Parcel</span></h1>
+            <p>Enter the parcel details below to begin its secure journey.</p>
+        </section>
+
+        <form class="register-card" id="parcelForm">
+
+            <div class="form-section-title">
+                <span>01</span>
+                <div>
+                    <h2>Sender Information</h2>
+                    <p>Details of the person sending the parcel</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="senderName">Sender Name</label>
+                    <input type="text" id="senderName" placeholder="Enter sender name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="senderPhone">Sender Phone</label>
+                    <input type="tel" id="senderPhone" placeholder="Enter 10-digit phone number" maxlength="10" required>
+                </div>
+            </div>
+
+            <div class="form-section-title">
+                <span>02</span>
+                <div>
+                    <h2>Receiver Information</h2>
+                    <p>Details of the person receiving the parcel</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="receiverName">Receiver Name</label>
+                    <input type="text" id="receiverName" placeholder="Enter receiver name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="receiverPhone">Receiver Phone</label>
+                    <input type="tel" id="receiverPhone" placeholder="Enter 10-digit phone number" maxlength="10" required>
+                </div>
+            </div>
+
+            <div class="form-section-title">
+                <span>03</span>
+                <div>
+                    <h2>Parcel Information</h2>
+                    <p>Provide details about the parcel</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="parcelSize">Parcel Size</label>
+                    <select id="parcelSize" required>
+                        <option value="">Select parcel size</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="parcelType">Parcel Type</label>
+                    <select id="parcelType" required>
+                        <option value="">Select parcel type</option>
+                        <option value="Documents">Documents</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Parcel Description</label>
+                <textarea id="description" rows="3" placeholder="Briefly describe the parcel..." required></textarea>
+            </div>
+
+            <div class="register-footer">
+                <p>◇ Parcel details will be used for locker allocation and tracking.</p>
+                <button type="submit" class="register-submit">
+                    Register Parcel →
+                </button>
+            </div>
+
+            <p id="registerMessage" class="register-message"></p>
+
+        </form>
+    </main>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | ParcelGuard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <aside class="dashboard-sidebar">
+
+        <a href="index.html" class="dashboard-brand">
+            <span class="dashboard-brand-icon">⬡</span>
+            <span>Parcel<span>Guard</span></span>
+        </a>
+
+        <p class="sidebar-label">MAIN MENU</p>
+
+        <a href="admin-dashboard.html" class="sidebar-link active">
+            <span>▦</span> Dashboard
+        </a>
+
+        <a href="register-parcel.html" class="sidebar-link">
+            <span>＋</span> Register Parcel
+        </a>
+
+        <a href="track-parcel.html" class="sidebar-link">
+            <span>⌕</span> Track Parcel
+        </a>
+
+        <a href="security-analysis.html" class="sidebar-link">
+            <span>◇</span> Security Analysis
+        </a>
+
+        <p class="sidebar-label sidebar-second-label">SYSTEM</p>
+
+        <a href="#lockerSection" class="sidebar-link">
+            <span>▣</span> Locker Monitoring
+        </a>
+
+        <a href="index.html" class="sidebar-link">
+            <span>↪</span> Logout
+        </a>
+
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">A</div>
+            <div>
+                <strong>System Admin</strong>
+                <p>Administrator</p>
+            </div>
+        </div>
+
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-topbar">
+            <div>
+                <span class="section-tag">CONTROL CENTER</span>
+                <h1>Admin Dashboard</h1>
+                <p>Monitor parcel activities and system security.</p>
+            </div>
+
+            <div class="admin-profile">
+                <span class="admin-profile-icon">A</span>
+                <div>
+                    <strong>Admin</strong>
+                    <p>System Manager</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard-welcome">
+            <div>
+                <h2>Welcome back, Admin</h2>
+                <p>Here's an overview of your parcel protection system.</p>
+            </div>
+
+            <a href="register-parcel.html" class="dashboard-add-button">
+                + Register New Parcel
+            </a>
+        </section>
+
+        <!-- DASHBOARD STATISTICS -->
+
+        <section class="dashboard-stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">▣</div>
+                <span>TOTAL PARCELS</span>
+                <strong>--</strong>
+                <p>Registered parcels</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">◷</div>
+                <span>ACTIVE PARCELS</span>
+                <strong>--</strong>
+                <p>Currently in system</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">◇</div>
+                <span>AVAILABLE LOCKERS</span>
+                <strong id="availableLockers">0</strong>
+                <p>Ready for allocation</p>
+            </div>
+
+            <div class="stat-card alert-stat">
+                <div class="stat-icon">!</div>
+                <span>SECURITY ALERTS</span>
+                <strong>--</strong>
+                <p>Check security alerts below</p>
+            </div>
+
+        </section>
+
+        <!-- PARCEL ACTIVITY AND SECURITY -->
+
+        <section class="dashboard-content-grid">
+
+            <div class="dashboard-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-tag">PARCEL MANAGEMENT</span>
+                        <h2>Recent Parcel Activity</h2>
+                    </div>
+
+                    <a href="track-parcel.html">View Tracking →</a>
+                </div>
+
+                <div class="parcel-table-wrapper">
+                    <table class="parcel-table">
+                        <thead>
+                            <tr>
+                                <th>TRACKING ID</th>
+                                <th>PARCEL SIZE</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td colspan="3">Parcel activity will be connected to the database.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="dashboard-panel alerts-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-tag">SYSTEM SECURITY</span>
+                        <h2>Security Alerts</h2>
+                    </div>
+
+                    <span class="alert-count">!</span>
+                </div>
+
+                <div class="alert-item">
+                    <span class="alert-symbol">!</span>
+                    <div>
+                        <strong>Failed OTP Attempts</strong>
+                        <p>Multiple unsuccessful attempts detected.</p>
+                        <small>Demo alert</small>
+                    </div>
+                </div>
+
+                <div class="alert-item" id="otpSecurityAlert" hidden>
+                    <span class="alert-symbol">!</span>
+                    <div>
+                        <strong>New Security Alert</strong>
+                        <p id="otpAlertMessage"></p>
+                        <small>Requires Attention</small>
+                    </div>
+                </div>
+
+                <div class="alert-item" id="tamperingAlert" hidden>
+                    <span class="alert-symbol">!</span>
+                    <div>
+                        <strong id="tamperingAlertTitle">Parcel Tampering Alert</strong>
+                        <p id="tamperingAlertMessage"></p>
+                        <small id="tamperingAlertTime">Requires Attention</small>
+                    </div>
+                </div>
+
+                <a href="security-analysis.html" class="alert-link">
+                    View Security Analysis →
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- LIVE LOCKER MONITORING -->
+
+        <section class="dashboard-panel locker-panel" id="lockerSection">
+
+            <div class="panel-heading">
+                <div>
+                    <span class="section-tag">SMART LOCKER MANAGEMENT</span>
+                    <h2>Locker Monitoring</h2>
+                    <p>Live status of all registered lockers.</p>
+                </div>
+
+                <span class="demo-label" id="lockerConnectionStatus">
+                    Connecting...
+                </span>
+            </div>
+
+            <div class="locker-summary">
+
+                <div class="stat-card">
+                    <span>TOTAL LOCKERS</span>
+                    <strong id="totalLockers">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>AVAILABLE</span>
+                    <strong id="availableLockerCount">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>OCCUPIED</span>
+                    <strong id="occupiedLockers">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>MAINTENANCE</span>
+                    <strong id="maintenanceLockers">0</strong>
+                </div>
+
+            </div>
+
+            <div class="locker-grid" id="lockerGrid">
+                <p>Loading locker information...</p>
+            </div>
+
+            <p id="lockerUpdatedTime">Waiting for locker information...</p>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            AI-Based Smart Parcel Protection and Tracking System
+            <span>ParcelGuard Admin Panel</span>
+        </footer>
+
+    </main>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

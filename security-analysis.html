@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Security Analysis</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="security-page">
+
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon">⬡</div>
+            <span>Parcel<span class="blue">Guard</span></span>
+        </div>
+        <a href="track-parcel.html" class="nav-login">← Back to Tracking</a>
+    </header>
+
+    <main class="security-container">
+
+        <section class="security-heading">
+            <span class="section-tag">INTELLIGENT PROTECTION</span>
+            <h1>AI Security <span>Analysis</span></h1>
+            <p>Monitor parcel condition and identify possible security risks.</p>
+        </section>
+
+        <section class="security-overview">
+
+            <div class="security-main-card">
+                <div class="security-symbol">⬡</div>
+                <span class="section-tag">SECURITY OVERVIEW</span>
+                <h2>Parcel Security Status</h2>
+                <div class="security-status" id="securityStatus">
+                    <span class="status-indicator"></span>
+                    Secure
+                </div>
+                <p id="securitySummary">Awaiting seal inspection.</p>
+            </div>
+
+            <div class="security-score-card">
+                <span>AI RISK LEVEL</span>
+                <div class="risk-circle">
+                    <div>
+                        <strong id="riskLevel">LOW</strong>
+                        <small>DEMO RESULT</small>
+                    </div>
+                </div>
+                <p id="riskSummary">Inspection pending.</p>
+            </div>
+
+        </section>
+
+        <section class="security-checks">
+            <div class="security-section-heading">
+                <div>
+                    <span class="section-tag">PROTECTION CHECKS</span>
+                    <h2>Parcel Inspection</h2>
+                </div>
+                <span class="demo-label">DEMO DATA</span>
+            </div>
+
+            <div class="check-grid">
+
+                <div class="check-card">
+                    <div class="check-icon">◇</div>
+                    <div>
+                        <h3>Seal Condition</h3>
+                        <p>Parcel seal inspection</p>
+                    </div>
+                    <span class="check-result" id="sealResult">Pending</span>
+                </div>
+
+                <div class="check-card">
+                    <div class="check-icon">⌕</div>
+                    <div>
+                        <h3>Tampering Detection</h3>
+                        <p>Unauthorized access check</p>
+                    </div>
+                    <span class="check-result" id="tamperResult">Pending</span>
+                </div>
+
+                <div class="check-card">
+                    <div class="check-icon">▣</div>
+                    <div>
+                        <h3>Parcel Condition</h3>
+                        <p>Visible damage inspection</p>
+                    </div>
+                    <span class="check-result" id="conditionResult">Pending</span>
+                </div>
+
+                <div class="check-card">
+                    <div class="check-icon">◷</div>
+                    <div>
+                        <h3>Security Monitoring</h3>
+                        <p>Parcel monitoring status</p>
+                    </div>
+                    <span class="check-result">Active</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PARCEL SEAL INSPECTION -->
+
+        <section class="seal-inspection">
+            <span class="section-tag">STAFF SECURITY CHECK</span>
+            <h2>Parcel Seal Inspection</h2>
+            <p>Inspect the parcel seal and report its current condition.</p>
+
+            <form id="sealInspectionForm">
+
+                <label for="sealCondition">Select Seal Condition</label>
+
+                <select id="sealCondition" required>
+                    <option value="">Choose condition</option>
+                    <option value="Intact">Seal Intact</option>
+                    <option value="Broken">Seal Broken / Tampered</option>
+                </select>
+
+                <label for="inspectionRemarks">Inspection Remarks</label>
+
+                <textarea
+                    id="inspectionRemarks"
+                    rows="3"
+                    placeholder="Enter inspection details..."
+                ></textarea>
+
+                <button type="submit" class="security-continue">
+                    Submit Inspection →
+                </button>
+
+                <p id="inspectionMessage"></p>
+
+            </form>
+        </section>
+
+        <section class="security-report">
+            <span class="section-tag">ANALYSIS REPORT</span>
+            <h2>Security Activity</h2>
+
+            <div class="report-row">
+                <span class="report-dot"></span>
+                <div>
+                    <strong>Parcel registered</strong>
+                    <p>Parcel entered into the system</p>
+                </div>
+                <span class="report-time">Completed</span>
+            </div>
+
+            <div class="report-row">
+                <span class="report-dot"></span>
+                <div>
+                    <strong>Locker assigned</strong>
+                    <p>Suitable locker allocation recorded</p>
+                </div>
+                <span class="report-time">Completed</span>
+            </div>
+
+            <div class="report-row">
+                <span class="report-dot"></span>
+                <div>
+                    <strong>Security analysis</strong>
+                    <p id="inspectionReport">Waiting for seal inspection</p>
+                </div>
+                <span class="report-time" id="inspectionTime">Pending</span>
+            </div>
+        </section>
+
+        <a href="otp-verification.html" class="security-continue">
+            Continue to OTP Verification →
+        </a>
+
+        <p class="security-disclaimer">
+            Staff inspection is a manual demo check. It does not automatically
+            detect tampering or perform real AI image analysis.
+        </p>
+
+    </main>
+
+    <script src="js/seal-inspection.js"></script>
+
+</body>
+</html>

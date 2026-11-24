@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Parcel Protection System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon">⬡</div>
+            <span>Parcel<span class="blue">Guard</span></span>
+        </div>
+        <a href="index.html" class="nav-login">← Back to Home</a>
+    </header>
+
+    <main class="login-container">
+
+        <section class="login-visual">
+            <div class="login-orbit"></div>
+            <div class="login-shield">✓</div>
+
+            <span class="section-tag">SECURE ADMIN ACCESS</span>
+            <h1>Protecting Every<br><span>Parcel Journey.</span></h1>
+            <p>
+                Manage parcel registrations, monitor locker
+                allocation and keep deliveries secure through
+                intelligent parcel protection.
+            </p>
+
+            <div class="login-points">
+                <span>◇ Secure access</span>
+                <span>◇ Smart monitoring</span>
+                <span>◇ Parcel management</span>
+            </div>
+        </section>
+
+        <section class="login-form-section">
+            <div class="login-card">
+
+                <div class="login-icon">♙</div>
+
+                <span class="section-tag">WELCOME BACK</span>
+                <h2>Admin Login</h2>
+                <p class="login-subtitle">
+                    Sign in to access your admin dashboard.
+                </p>
+
+                <form id="loginForm">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button type="submit" class="login-submit">
+                        Sign In →
+                    </button>
+
+                    <p id="loginMessage" class="login-message"></p>
+                </form>
+
+                <div class="login-note">
+                    <span>🔒</span>
+                    Authorized administrators only
+                </div>
+
+                <a href="index.html" class="back-link">
+                    Return to Homepage
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
